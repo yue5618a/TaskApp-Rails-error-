@@ -1,0 +1,24 @@
+<% provide(:title, 'All Users') %>
+
+<h1>利用者一覧</h1>
+
+<div class="col-md-10 col-md-offset-1">
+  <table class="table table-hover" id="table-users">
+    <thead>
+      <tr>
+        <th><%= User.human_attribute_name :name %></th>
+      </tr>
+    </thead>
+
+    <% @users.each do |user| %>
+      <tr>
+        <td>
+          <%= link_to user.name, user %>
+          <% if user.admin? %>
+            <span class="label label-primary label-admin">管理者</span>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+</div>
