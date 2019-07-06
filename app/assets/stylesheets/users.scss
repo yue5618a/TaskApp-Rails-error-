@@ -1,7 +1,9 @@
 #table-users {
-  vertical-align: middle;
+  td {
+    vertical-align: middle;
+  }
 }
 
-.label-admin {
+.label-user-division {
   margin-left: 5px;
 }
