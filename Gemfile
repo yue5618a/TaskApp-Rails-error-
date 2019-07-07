@@ -15,6 +15,7 @@ gem 'rails-i18n'
 gem 'active_decorator'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
+gem 'rails_autolink'
 
 group :development, :test do
   gem 'sqlite3'
