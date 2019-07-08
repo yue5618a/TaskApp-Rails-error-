@@ -4,7 +4,6 @@ class TasksController < ApplicationController
   before_action :logged_in_user
   before_action :correct_user
   
-  
   def index
     @tasks = @user.tasks
   end
@@ -32,7 +31,7 @@ class TasksController < ApplicationController
   def update
     if @task.update_attributes(task_params)
       flash[:success] = "タスクを更新しました。"
-      redirect_to user_tasks_url @user
+      redirect_to user_task_url(@user, @task)
     else
       render :edit
     end

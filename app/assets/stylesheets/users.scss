@@ -10,3 +10,12 @@
 .label-user-division {
   margin-left: 5px;
 }
+
+#table-user {
+  table-layout: fixed; width: 100%;
+  th {
+    vertical-align: middle;
+    white-space: nowrap;
+    text-align: center;
+  }
+}
