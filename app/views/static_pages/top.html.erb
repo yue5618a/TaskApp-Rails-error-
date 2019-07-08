@@ -7,7 +7,7 @@
       <h1 id="top-main-title">TaskApp</h1>
       <p>TaskAppは簡易ToDo管理ツールです。</p>
       <p>↓↓初めてのご利用↓↓</p>
-      <%= link_to "アカウント作成", signup_path, class: "btn btn-lg btn-success" %>
+      <%= link_to "アカウント作成", signup_path, class: "btn btn-lg btn-success #{"disabled" if logged_in?}" %>
     </div>
   </div>
 
@@ -25,8 +25,12 @@
         <%= f.check_box :remember_me, id: "remember-me" %>
         <span>ログイン情報を記憶する</span>
       <% end %>
-
-      <%= f.submit "ログイン", class: "btn btn-primary btn-block btn-form" %>
+      
+      <% if logged_in? %>
+        <%= f.submit "ログイン状態です", class: "btn btn-primary btn-block btn-form", disabled: "disabled" %>
+      <% else %>
+        <%= f.submit "ログイン", class: "btn btn-primary btn-block btn-form" %>
+      <% end %>
     <% end %>
   </div>
 </div>
