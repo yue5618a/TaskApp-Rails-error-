@@ -21,4 +21,22 @@ class SessionsController < ApplicationController
     flash[:success] = 'ログアウトしました。'
     redirect_to root_url
   end
+  
+  # ゲスト管理者ログイン
+  def create_a
+    user = User.find(2)
+    log_in user
+    forget user
+    flash[:success] = 'ゲスト管理者としてログインしました。'
+    redirect_to user
+  end
+  
+  # ゲストユーザーログイン
+  def create_b
+    user = User.find(3)
+    log_in user
+    forget user
+    flash[:success] = 'ゲストユーザーとしてログインしました。'
+    redirect_to user
+  end
 end
