@@ -32,11 +32,6 @@ class UsersController < ApplicationController
   end
   
   def edit
-    case @user.id
-    when 1, 2, 3
-      flash[:danger] = "このユーザーは編集できません。"
-      redirect_to @user
-    end
   end
   
   def update
@@ -49,15 +44,9 @@ class UsersController < ApplicationController
   end
   
   def destroy
-    case @user.id
-    when 1, 2, 3
-      flash[:danger] = "このユーザーは削除できません。"
-      redirect_to users_url
-    else
-      @user.destroy
-      flash[:success] = "#{@user.name}のデータを削除しました。"
-      redirect_to users_url
-    end
+    @user.destroy
+    flash[:success] = "#{@user.name}のデータを削除しました。"
+    redirect_to users_url
   end
   
   private
