@@ -13,7 +13,7 @@ User.create!( name: "管理者",
   User.create!(name: name,
                email: email,
                password: password + (n + 1).to_s,
-               password_confirmation: password + (n + 1).to_s)
+               password_confirmation: password)
 end
 
 puts "Users Created"
