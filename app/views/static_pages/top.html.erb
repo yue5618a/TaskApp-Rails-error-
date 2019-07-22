@@ -12,12 +12,6 @@
       <% else %>
         <%= link_to "アカウント作成", signup_path, class: "btn btn-lg btn-success" %>
       <% end %>
-      <% unless logged_in? %>
-        <div style="margin-top: 10px;">
-          <%= link_to "ゲストログイン（管理権限）", guest_admin_login_path, class: "btn btn-danger" %>
-          <%= link_to "ゲストログイン（一般権限）", guest_login_path, class: "btn btn-warning" %>
-        </div>
-      <% end %>
     </div>
   </div>
 
