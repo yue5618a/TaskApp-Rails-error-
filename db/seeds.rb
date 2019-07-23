@@ -12,7 +12,7 @@ User.create!( name: "管理者",
   password = "password"
   User.create!(name: name,
                email: email,
-               password: password + (n + 1).to_s,
+               password: password,
                password_confirmation: password)
 end
 
